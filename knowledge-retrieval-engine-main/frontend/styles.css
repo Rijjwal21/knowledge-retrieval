@@ -1,0 +1,274 @@
+/* Base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('assets/opoy7.jpg');
+    background-size: cover;
+    color: #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/opoy7.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; /* Adjust this value to control the opacity of bg image */
+    z-index: -1; /* Ensures it stays behind the main content */
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin-top: 80px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00aaff;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+}
+
+h1 span {
+    background: linear-gradient(75deg, #00aaff, #ff5733);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Typewriter effect */
+/* .typewriter {
+    overflow: hidden;
+    border-right: 3px solid #00aaff;
+    white-space: nowrap;
+    animation: typing 2.5s steps(30, end), blink-caret 0.75s steps(30) 2.5s ;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00aaff; }
+} */
+
+/* Navbar */
+nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #1e1f20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    /*color: #00aaff;*/
+    color: #e3e3e3;
+}
+
+/* Upload Section */
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #d1d5db;
+    background-color: #333;
+    border: 2px solid #00aaff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #00aaff;
+}
+
+.custom-file-upload input {
+    display: none;
+} */
+
+button {
+    padding: 10px 20px;
+    border: none;
+    color: #ffffff;
+    background-color: #8e2de2;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a1bb8;
+}
+
+/* Styling for custom upload button */
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #00aaff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #0077cc;
+}
+
+.custom-file-upload input {
+    display: none;
+}
+
+/* Spinner styles */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #00aaff;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-top: 10px;
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Uploading status text */
+#upload-status {
+    font-size: 0.9rem;
+    color: #e3e3e3;
+    margin-top: 5px;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 900px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatBox {
+    height: 400px;
+    width: 100%;
+    max-width: 880px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    /* border: 1px solid #444; */
+    padding: 10px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #e5e5e5;
+}
+
+#chatBox div {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#chatBox .user {
+    text-align: right;
+    /* color: #8e2de2; */
+    color: #00aaff;
+}
+
+#chatBox .bot {
+    text-align: left;
+    /* color: #00aaff; */
+    color: #e3e3e3;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e2f;
+    color: #d1d5db;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #8e2de2;
+}
+
+.response-markdown {
+    margin-top: 5px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.response-markdown h1, .response-markdown h2, .response-markdown h3 {
+    color: #e3e3e3; /* Customize heading colors */
+    margin: 10px 0px;
+}
+
+.response-markdown p {
+    margin: 0.5em 0;
+    color: #e3e3e3;
+}
+
+.response-markdown a {
+    color: #8e2de2;
+    text-decoration: underline;
+}
+
+.response-markdown code {
+    background-color: #333;
+    color: #e3e3e3;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
